@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/bt_pencil"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#C6C8B7"
+                android:text="构建"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                app:icon="@android:drawable/ic_menu_edit"
+                app:iconGravity="textStart"
+                app:iconTint="#673AB7" />
+
+            <Button
+                android:id="@+id/button_target"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#C6C8B7"
+                android:text="导航"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                app:icon="@android:drawable/ic_menu_send"
+                app:iconGravity="textStart"
+                app:iconTint="#673AB7" />
+
+
+            <Button
+                android:id="@+id/button_query"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#C6C8B7"
+                android:text="搜救"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                app:icon="@android:drawable/ic_menu_myplaces"
+                app:iconGravity="textStart"
+                app:iconTint="#673AB7" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ll1">
+                    <Button
+                        android:id="@+id/button_me"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#C6C8B7"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        app:icon="@android:drawable/ic_menu_mylocation"
+                        app:iconGravity="textStart"
+                        app:iconTint="#673AB7"
+                     />
+
+                    <Button
+                        android:id="@+id/button_area"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#C6C8B7"
+                        android:textColor="@color/black"
+                        app:icon="@android:drawable/ic_menu_mapmode"
+                        app:iconGravity="textStart"
+                        app:iconTint="#673AB7" />
+                    <Button
+                        android:id="@+id/button_helpme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#C6C8B7"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        app:icon="@android:drawable/ic_menu_myplaces"
+                        app:iconGravity="textStart"
+                        app:iconTint="#673AB7" />
+                    <Button
+                        android:id="@+id/bt_material"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#C6C8B7"
+                        android:textColor="@color/black"
+                        app:icon="@android:drawable/ic_menu_today"
+                        app:iconGravity="textStart"
+                        app:iconTint="#673AB7"
+                        app:layout_constraintLeft_toRightOf="@+id/button_query"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <Button
+                        android:id="@+id/bt_back"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#C6C8B7"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        app:icon="@android:drawable/ic_input_delete"
+                        app:iconGravity="textStart"
+                        app:iconTint="#673AB7"
+                        />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll2"
+        app:navGraph="@navigation/nav_graph" />
+
+    <fragment
+        android:id="@+id/list"
+        android:name="com.sun.myapplication1.FragmentList"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll2"
+        tools:ignore="MissingConstraints" />
+    <FrameLayout
+        android:id="@+id/f1"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp" />
+    <FrameLayout
+        android:id="@+id/f2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp" />
+    <FrameLayout
+        android:id="@+id/f3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp" />
+    <FrameLayout
+        android:id="@+id/f4_kongtou"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

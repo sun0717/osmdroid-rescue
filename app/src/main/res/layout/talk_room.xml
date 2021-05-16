@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ccc"
+    android:orientation="vertical"
+    tools:context="com.sun.myapplication1.TalkRoom">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="张三"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/talk_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="x" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/listview_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="请输入要发送的内容" />
+
+        <Button
+            android:id="@+id/bt_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送" />
+    </LinearLayout>
+</LinearLayout>
+

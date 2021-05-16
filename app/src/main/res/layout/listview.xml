@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray"
+    android:visibility="invisible">
+    <Button
+        android:id="@+id/bt_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:backgroundTint="#C6C8B7"
+        app:icon="@android:drawable/ic_delete"
+        app:iconGravity="textStart"
+        app:iconTint="#171417" />
+    <include
+        android:id="@+id/list_empty"
+        layout="@layout/listview_empty"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_view"/>
+</LinearLayout>

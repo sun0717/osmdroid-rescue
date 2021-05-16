@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <Button
+        android:id="@+id/bt_pencil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="构建"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_menu_edit"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/button_target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="导航"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_menu_send"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintLeft_toRightOf="@id/bt_pencil"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="定位我"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_menu_mylocation"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintLeft_toRightOf="@id/button_target"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="撤销"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_input_delete"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/button_me"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="空区域"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_menu_myplaces"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintLeft_toRightOf="@+id/button_me"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_helpme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="救救我"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_menu_myplaces"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintLeft_toRightOf="@+id/button_area"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/button_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="搜救"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_menu_myplaces"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintLeft_toRightOf="@+id/button_helpme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_material"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C6C8B7"
+        android:text="空投物资"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_menu_today"
+        app:iconGravity="textStart"
+        app:iconTint="#673AB7"
+        app:layout_constraintLeft_toRightOf="@+id/button_query"
+        app:layout_constraintTop_toTopOf="parent" />
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_pencil"
+        app:navGraph="@navigation/nav_graph" />
+
+    <fragment
+        android:id="@+id/list"
+        android:name="com.sun.myapplication1.FragmentList"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_back"
+        tools:ignore="MissingConstraints" />
+    <FrameLayout
+        android:id="@+id/f1"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp" />
+    <FrameLayout
+        android:id="@+id/f2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp" />
+    <FrameLayout
+        android:id="@+id/f3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="91dp" />
+
+    <FrameLayout
+        android:id="@+id/f4_kongtou"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
