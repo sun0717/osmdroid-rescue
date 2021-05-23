@@ -18,12 +18,9 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#C6C8B7"
                 android:text="构建"
+                android:drawableLeft="@drawable/pencil"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                app:icon="@android:drawable/ic_menu_edit"
-                app:iconGravity="textStart"
-                app:iconTint="#673AB7" />
-
+                android:textColor="@color/black" />
             <Button
                 android:id="@+id/button_target"
                 android:layout_width="0dp"
@@ -32,8 +29,7 @@
                 android:text="导航"
                 android:layout_weight="1"
                 android:textColor="@color/black"
-                app:icon="@android:drawable/ic_menu_send"
-                app:iconGravity="textStart"
+                android:drawableLeft="@drawable/ic_daohang"
                 app:iconTint="#673AB7" />
 
 
@@ -62,7 +58,8 @@
                         android:backgroundTint="#C6C8B7"
                         android:layout_weight="1"
                         android:textColor="@color/black"
-                        app:icon="@android:drawable/ic_menu_mylocation"
+                        android:text="定位我"
+                        android:drawableLeft="@drawable/ic_loacme"
                         app:iconGravity="textStart"
                         app:iconTint="#673AB7"
                      />
@@ -74,28 +71,24 @@
                         android:layout_weight="1"
                         android:backgroundTint="#C6C8B7"
                         android:textColor="@color/black"
-                        app:icon="@android:drawable/ic_menu_mapmode"
-                        app:iconGravity="textStart"
-                        app:iconTint="#673AB7" />
+                        android:drawableLeft="@drawable/ic_dangerous"
+                        android:text="空区域" />
                     <Button
                         android:id="@+id/button_helpme"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:text="救救我"
                         android:backgroundTint="#C6C8B7"
                         android:layout_weight="1"
-                        android:textColor="@color/black"
-                        app:icon="@android:drawable/ic_menu_myplaces"
-                        app:iconGravity="textStart"
-                        app:iconTint="#673AB7" />
+                        android:drawableLeft="@drawable/ic_help"
+                        android:textColor="@color/black" />
                     <Button
                         android:id="@+id/bt_material"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="空投"
                         android:backgroundTint="#C6C8B7"
                         android:textColor="@color/black"
-                        app:icon="@android:drawable/ic_menu_today"
-                        app:iconGravity="textStart"
-                        app:iconTint="#673AB7"
                         app:layout_constraintLeft_toRightOf="@+id/button_query"
                         app:layout_constraintTop_toTopOf="parent" />
                     <Button
@@ -105,9 +98,9 @@
                         android:backgroundTint="#C6C8B7"
                         android:layout_weight="1"
                         android:textColor="@color/black"
-                        app:icon="@android:drawable/ic_input_delete"
                         app:iconGravity="textStart"
                         app:iconTint="#673AB7"
+                        android:text="撤销"
                         />
     </LinearLayout>
 

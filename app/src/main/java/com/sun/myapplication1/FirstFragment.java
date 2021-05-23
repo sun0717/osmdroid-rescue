@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,15 @@ import android.location.LocationManager;
 
 //import com.arthas.androidy.entity.GnssStatusInfo;
 
+import com.google.gson.Gson;
+import com.qweather.sdk.bean.Basic;
+import com.qweather.sdk.bean.WarningBean;
+import com.qweather.sdk.bean.base.Code;
+import com.qweather.sdk.bean.base.Lang;
+import com.qweather.sdk.bean.base.Unit;
+import com.qweather.sdk.bean.geo.GeoBean;
+import com.qweather.sdk.bean.weather.WeatherNowBean;
+import com.qweather.sdk.view.QWeather;
 import com.sun.myapplication1.model.Position;
 
 import java.lang.reflect.Array;
@@ -141,6 +151,34 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
         bt_pencil = (Button) getActivity().findViewById(R.id.bt_pencil);
         button_area = (Button) getActivity().findViewById(R.id.button_area);
         bt_back = (Button) getActivity().findViewById(R.id.bt_back);
+
+        Drawable pencil = getResources().getDrawable(R.drawable.pencil);
+        Drawable target = getResources().getDrawable(R.drawable.ic_daohang);
+        Drawable me = getResources().getDrawable(R.drawable.ic_loacme);
+        Drawable dangerous = getResources().getDrawable(R.drawable.ic_dangerous);
+        Drawable help = getResources().getDrawable(R.drawable.ic_help);
+        Drawable material = getResources().getDrawable(R.drawable.ic_material);
+        Drawable backSpace = getResources().getDrawable(R.drawable.ic_backspace);
+        Drawable query = getResources().getDrawable(R.drawable.ic_query);
+
+        pencil.setBounds(25, 5 , 100 ,100);
+        target.setBounds(25, 5 ,100 ,100);
+        me.setBounds(10, 5 ,100 ,100);
+        dangerous.setBounds(10, 5 ,100, 100);
+        help.setBounds(10,5,100,100);
+        material.setBounds(10,5,100,100);
+        backSpace.setBounds(10,5,100 ,100);
+        query.setBounds(10,5,100,100);
+
+
+        bt_pencil.setCompoundDrawables(pencil, null , null ,null);
+        button_target.setCompoundDrawables(target, null , null , null);
+        button_me.setCompoundDrawables(me, null , null , null);
+        button_area.setCompoundDrawables(dangerous,null , null, null);
+        button_helpme.setCompoundDrawables(help,null,null,null);
+        bt_back.setCompoundDrawables(backSpace,null,null,null);
+        button_query.setCompoundDrawables(query,null,null,null);
+
         return inflater.inflate(R.layout.fragment_first, container, false);
     }
 
@@ -258,7 +296,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.button_query:
                 List<Position> allPosition = LitePal.findAll(Position.class);
-
                 for(Position q: allPosition){
                     SimpleLocationOverlay simpleLocation = new SimpleLocationOverlay(ctx.getApplicationContext());
                     simpleLocation.setEnabled(true);
@@ -519,6 +556,47 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
                 longPressMarker.setPosition(p);
                 longPressMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                 longPressMarker.setTitle(""+p.getLatitude()+","+p.getLongitude());
+
+                /***
+                 *
+                 * 天气接口添加
+                 */
+
+//                QWeather.getWeatherNow(ctx.getApplicationContext(), "CN101010100", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Log.i("MainActivity", "getWeather onError: " + e);
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(WeatherNowBean weatherBean) {
+//                        Log.i("MainActivity", "getWeather onSuccess: " + new Gson().toJson(weatherBean));
+//                        //先判断返回的status是否正确，当status正确时获取数据，若status不正确，可查看status对应的Code值找到原因
+//                        if (Code.OK == weatherBean.getCode()) {
+//                            WeatherNowBean.NowBaseBean now = weatherBean.getNow();
+//                        } else {
+//                            //在此查看返回数据失败的原因
+//                            Code code = weatherBean.getCode();
+//                            Log.i("MainActivity", "failed code: " + code);
+//                        }
+//                    }
+//                });
+//                QWeather.getWarning(ctx.getApplicationContext(), 117.03 + "," +28.24, new QWeather.OnResultWarningListener() {
+//                    @Override
+//                    public void onError(Throwable throwable) {
+//                        Log.i("MainActivity", "getWeather onError: " );
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(WarningBean warningBean) {
+//                        Log.i("MainActivity", "getWeather onSuccess: " + new Gson().toJson(warningBean));
+//                        if (Code.OK == warningBean.getCode()) {
+//                            WarningBean.WarningBeanBase warningBeanBase = new WarningBean.WarningBeanBase();
+//                            Log.i("MainActivity", "xxxxxxxxxxxxxxxxxx: " + warningBeanBase.getText());
+//                        }
+//                    }
+//                });
+
                 mMapView.getOverlays().add(longPressMarker);
                 return true;
             }

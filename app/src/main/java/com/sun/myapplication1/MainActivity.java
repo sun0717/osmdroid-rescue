@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.qweather.sdk.view.HeConfig;
 import com.sun.myapplication1.model.Position;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,6 +55,14 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.Lis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+//        提前进行账户初始化
+        HeConfig.init("HE2105101242091981", "7830aeb66d07465d951f14d09a3d4a08");
+        //切换至开发版服务
+        HeConfig.switchToDevService();
+
+
         //数据库LitePal
         LitePal.initialize(this);
         SQLiteDatabase db = LitePal.getDatabase();
@@ -86,7 +96,18 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.Lis
 
         //得到最好的定位方式
         String provider = locationManager.getBestProvider(criteria, true);
+
+        /*空投*/
+
         bt_material = (Button) findViewById(R.id.bt_material);
+
+        Drawable material = getResources().getDrawable(R.drawable.ic_material);
+
+        material.setBounds(10,5,100,100);
+
+        bt_material.setCompoundDrawables(material, null, null, null);
+
+
         bt_material.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

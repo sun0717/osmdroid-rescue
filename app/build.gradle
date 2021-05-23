@@ -36,9 +36,11 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.2.2'
     implementation 'org.litepal.guolindev:core:3.2.3'
 
+
     implementation(name:'osmbonuspack_6.6.0', ext:'aar')
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation files('libs\\QWeather_Public_Android_V4.5.jar')
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

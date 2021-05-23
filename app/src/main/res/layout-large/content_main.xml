@@ -12,9 +12,6 @@
         android:backgroundTint="#C6C8B7"
         android:text="构建"
         android:textColor="@color/black"
-        app:icon="@android:drawable/ic_menu_edit"
-        app:iconGravity="textStart"
-        app:iconTint="#673AB7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
